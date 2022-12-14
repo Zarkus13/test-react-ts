@@ -1,0 +1,16 @@
+{
+  "header": {
+    "switch-language": "Switch language"
+  },
+  "test": {
+    "welcome": "Welcome to test page !"
+  },
+  "counter": {
+    "count": "Count",
+    "increment": "Increment",
+    "decrement": "Decrement",
+    "increment-amount": "Increment by amount",
+    "increment-by": "Increment by {{nb}} units",
+    "reset": "Reset counter"
+  }
+}

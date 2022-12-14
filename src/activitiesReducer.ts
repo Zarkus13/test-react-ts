@@ -11,7 +11,7 @@ const initialState: State = ({
   fetchingActivity: false
 });
 
-const addActivityToState = (state: State, action: PayloadAction<string>) => ({
+export const addActivityToState = (state: State, action: PayloadAction<string>) => ({
   ...state,
   activities: state.activities.concat([action.payload]),
   fetchingActivity: false

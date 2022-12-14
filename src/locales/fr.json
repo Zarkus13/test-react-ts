@@ -1,0 +1,16 @@
+{
+  "header": {
+    "switch-language": "Changer de langue"
+  },
+  "test": {
+    "welcome": "Bienvenue sur la page de test !"
+  },
+  "counter": {
+    "count": "Compteur",
+    "increment": "Incrémenter",
+    "decrement": "Décrémenter",
+    "increment-amount": "Incrémenter de X",
+    "increment-by": "Incrémenter de {{nb}} unités",
+    "reset": "Réinitialiser le compteur"
+  }
+}

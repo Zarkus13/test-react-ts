@@ -2,23 +2,25 @@ import React, { useState } from 'react';
 import { CounterButton, CounterWrapper, DisplayCount } from './styles';
 import { useAppDispatch, useAppSelector } from '../../store';
 import { decrement, increment, incrementByAmount, resetCounter } from '../../counterReducer';
+import { useTranslation } from 'react-i18next';
 
 const Counter: React.FC = () => {
-  const { counterValue } = useAppSelector((state) => state.counter);
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
+  const { counterValue } = useAppSelector((state) => state.counter);
 
   const [incAmount, setIncAmount] = useState(10);
 
   return (
     <CounterWrapper>
-      <DisplayCount>Count : {counterValue}</DisplayCount>
+      <DisplayCount>{t('counter.count')} : {counterValue}</DisplayCount>
 
       <CounterButton onClick={() => dispatch(increment())}>
-        Increment
+        {t('counter.increment')}
       </CounterButton>
 
       <CounterButton onClick={() => dispatch(decrement())}>
-        Decrement
+        {t('counter.decrement')}
       </CounterButton><br/><br/>
 
       <input
@@ -27,11 +29,11 @@ const Counter: React.FC = () => {
         onChange={(e) => setIncAmount(Number(e.target.value))}
       />
       <CounterButton onClick={() => dispatch(incrementByAmount(incAmount))}>
-        Increment by amount
+        {t('counter.increment-by', { nb: incAmount })}
       </CounterButton> <br/><br/>
 
       <CounterButton onClick={() => dispatch(resetCounter())}>
-        Reset counter
+        {t('counter.reset')}
       </CounterButton>
     </CounterWrapper>
   );
