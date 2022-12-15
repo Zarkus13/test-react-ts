@@ -5,6 +5,7 @@ import Counter from '../Counter';
 import MenuItem from '../MenuItem';
 import DisplayActivity from '../DisplayActivity';
 import { useTranslation } from 'react-i18next';
+import { eventCallback } from '../../utils/callbacks';
 
 const Template: React.FC = () => {
   const { t, i18n } = useTranslation();
@@ -12,6 +13,9 @@ const Template: React.FC = () => {
   return (
     <>
       <header>
+        <button onClick={eventCallback((e) => {throw Error('toto')})}>
+          error
+        </button>
         <button onClick={() => i18n.changeLanguage(i18n.language === 'en' ? 'fr' : 'en')}>
           {t('header.switch-language')}
         </button> <br/>
