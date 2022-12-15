@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import counterReducer from './counterReducer';
-import activitiesReducer from './activitiesReducer';
+import activitiesReducer from './Activities/activitiesReducer';
 
 const store = configureStore({
   reducer: {

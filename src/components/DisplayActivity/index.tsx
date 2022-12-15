@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useAppDispatch, useAppSelector } from '../../store';
-import { fetchActivity } from '../../activitiesReducer';
+import { fetchActivity } from '../../Activities/activitiesReducer';
 
 const DisplayActivity: React.FC = () => {
   const dispatch = useAppDispatch();

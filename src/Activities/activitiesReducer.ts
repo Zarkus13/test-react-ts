@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { fetchActivityAPI } from './api';
 
 interface State {
   activities: string[],
@@ -19,9 +20,7 @@ export const addActivityToState = (state: State, action: PayloadAction<string>) 
 
 export const fetchActivity = createAsyncThunk(
   'tasks/fetchActivity',
-  () =>
-    axios.get('https://www.boredapi.com/api/activity')
-      .then((res) => res.data.activity)
+  fetchActivityAPI
 );
 
 const activitiesSlice = createSlice({
